@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Classes</title>
+        <link rel="shortcut icon" type="image/x-icon" href="../assets/img/classes.png">
+        <link rel="stylesheet" type="text/css" href = "../assets/css/classes.css">
+    </head>
+    <body>
+        <div class = "title">
+            <h1>Classes</h1>
+        </div>
+        <div class = "toolbar">
+            <div class = "button" onclick = "window.open('https://bcp.instructure.com','_newtab');">Canvas</div>
+            <div class = "button" onclick = "window.open('https://bcp.instructure.com/courses/6066','_newtab');">English</div>
+            <div class = "button" onclick = "window.open('https://bcp.instructure.com/courses/5908','_newtab');">Chemistry</div>
+            <div class = "button" onclick = "window.open('https://bcp.instructure.com/courses/5667','_newtab');">Precalc</div>
+            <div class = "button" onclick = "window.open('https://bcp.instructure.com/courses/6158','_newtab');">History</div>
+            <div class = "button" onclick = "window.open('https://bcp.instructure.com/courses/6000','_newtab');">Religion</div>
+            <div class = "button" onclick = "window.open('https://bcp.instructure.com/courses/5843','_newtab');">Photo</div>
+            <div class = "button" onclick = "window.open('https://bcp.instructure.com/courses/5783','_newtab');">Spanish</div>
+        </div>
+        <div class = "container">
+                <div id = "div1" style = "float:left; width: 30%">
+                    <h1>Not On Normal Schedule?</h1>
+                    <form>
+                        <p style="font-weight:bold">Enter in your periods below: (e.g. 123456)</p>
+                        <input type = "text" name = "periods" id = "input"></input>
+                        <input type = "button" value = "submit" onclick = "calculate()"></input>
+                    </form>
+                </div>
+                <div id = "div2" style = "float: left;width: 33%"></div>
+                <div id = "div3" style = "float: left; width: 33%"></div>
+        </div>
+        <script src = "../assets/js/classes.js"></script>
+    </body>
+</html>
