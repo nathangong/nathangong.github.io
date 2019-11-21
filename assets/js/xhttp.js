@@ -29,7 +29,7 @@ myMSALObj.acquireTokenSilent(requestObj).then(function (tokenResponse) {
     });
 });
 
-var add = 2;
+var add = 0;
 function callRequestNextDay(accessToken) {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
