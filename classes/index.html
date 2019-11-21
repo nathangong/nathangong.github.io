@@ -3,7 +3,8 @@
     <head>
         <title>Classes</title>
         <link rel="shortcut icon" type="image/x-icon" href="../assets/img/classes.png">
-        <link rel="stylesheet" type="text/css" href = "../assets/css/classes.css">
+        <link rel="stylesheet" type="text/css" href = "../assets/css/main.css">
+        <link href="https://fonts.googleapis.com/css?family=Rubik&display=swap" rel="stylesheet">
     </head>
     <body>
         <div class = "title">
@@ -20,17 +21,12 @@
             <div class = "button" onclick = "window.open('https://bcp.instructure.com/courses/5783','_newtab');">Spanish</div>
         </div>
         <div class = "container">
-                <div id = "div1" style = "float:left; width: 30%">
-                    <h1>Not On Normal Schedule?</h1>
-                    <form>
-                        <p style="font-weight:bold">Enter in your periods below: (e.g. 123456)</p>
-                        <input type = "text" name = "periods" id = "input"></input>
-                        <input type = "button" value = "submit" onclick = "calculate()"></input>
-                    </form>
-                </div>
-                <div id = "div2" style = "float: left;width: 33%"></div>
-                <div id = "div3" style = "float: left; width: 33%"></div>
+            <div id = "div2" style = "float: left;width: 33%"></div>
+            <div id = "div3" style = "float: left; width: 33%"></div>
         </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://secure.aadcdn.microsoftonline-p.com/lib/1.0.0/js/msal.min.js"></script>
+        <script src = "../assets/js/xhttp.js"></script>
         <script src = "../assets/js/classes.js"></script>
     </body>
 </html>

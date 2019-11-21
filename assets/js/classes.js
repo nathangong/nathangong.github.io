@@ -1,30 +1,31 @@
-var d = new Date();
-var day = d.getDay(d.toString());
-let element = document.getElementById("div2");
-let para;
-let node;
+function main(classes) {
+    var d = new Date();
+    var day = d.getDay(d.toString());
+    let element = document.getElementById("div2");
+    let para;
+    let node;
 
-let titleNode = document.createTextNode("Predicted Classes For Today:");
-let title = document.createElement("h1");
-title.appendChild(titleNode);
-element.appendChild(title);
+    let titleNode = document.createTextNode("Today's Classes:");
+    let title = document.createElement("h1");
+    title.appendChild(titleNode);
+    element.appendChild(title);
 
-getSchedule(getPeriods(day));
+    getSchedule(classes);
 
-element = document.getElementById("div3");
-titleNode = document.createTextNode("Predicted Classes For Next Time You Have Class:");
-title = document.createElement("h1");
-title.appendChild(titleNode);
-element.appendChild(title);
+    element = document.getElementById("div3");
+    titleNode = document.createTextNode("Tommorow's Classes:");
+    title = document.createElement("h1");
+    title.appendChild(titleNode);
+    element.appendChild(title);
 
-if (day == 5 || day == 6) {
-    day = 1;
+    if (day == 5 || day == 6) {
+        day = 1;
+    }
+    else {
+        day++;
+    }
+
 }
-else {
-    day++;
-}
-
-getScheduleTommorow(getPeriods(day));
 
 function getPeriods(day) {
     switch(day) {
@@ -44,26 +45,21 @@ function getPeriods(day) {
     }
 }
 
-function getSchedule(periods) {
+function getSchedule(classes) {
     try {
-        let classes = ["English 2 Honors", "Chemistry Honors", "Precalculus Honors", "World History", "Creed, Community, Call", "Photography 1", "Spanish 3", "Debate", "Speech"];
-        var answer;
-        periods = periods.toString();
         var node1 = document.createTextNode("Classes you have:");
         var para1 = document.createElement("h3");
         para1.appendChild(node1);
         var element1 = document.getElementById("div2");
         element1.appendChild(para1);
-        for (i = 0; i < periods.length; i++) {
+        for (i = 0; i < classes.length; i++) {
             var spaceNode = document.createTextNode(" ");
             var space = document.createElement("p");
             space.appendChild(spaceNode);
             var Break = document.createElement("br");
-            var period = (parseInt(periods.charAt(i)) <= 7) ? parseInt(periods.charAt(i)) : "EC";
             var checkbox = document.createElement("input");
             checkbox.type = "checkbox";
-            var node = document.createTextNode(period + ": " + classes[periods.charAt(i)-1]);
-            classes[period-1] = "null";
+            var node = document.createTextNode(classes[i]);
             var element = document.getElementById("div2");
             element.appendChild(node);
             element.appendChild(checkbox);
@@ -71,25 +67,9 @@ function getSchedule(periods) {
             element.appendChild(space);
             element.appendChild(Break);
         }
-
-        var node2 = document.createTextNode("Classes you don't have:");
-        var para2 = document.createElement("h3");
-        para2.appendChild(node2);
-        var element2 = document.getElementById("div2");
-        element2.appendChild(para2);
-
-        for (i = 0; i < classes.length; i++) {
-            if (classes[i] != "null") {
-                var para = document.createElement("p");
-                var period = (i <= 6) ? i+1 : "EC";
-                var node = document.createTextNode(period + ": " + classes[i]);
-                para.appendChild(node);
-                var element = document.getElementById("div2");
-                element.appendChild(para);
-            }
-        }
     }
     catch (error) {
+        console.log(error);
         let node = document.createTextNode("You do not have any classes today! :)");
         let para = document.createElement("p");
         para.appendChild(node);
@@ -97,49 +77,29 @@ function getSchedule(periods) {
         element.appendChild(para);
     }
 } 
-function getScheduleTommorow(periods) {
+function getScheduleTommorow(classes) {
+    var usedPeriods = [];
     try {
-        let classes = ["English 2 Honors", "Chemistry Honors", "Precalculus Honors", "World History", "Creed, Community, Call", "Photography 1", "Spanish 3", "Debate", "Speech"];
-        var answer;
-        periods = periods.toString();
         var node1 = document.createTextNode("Classes you have:");
         var para1 = document.createElement("h3");
         para1.appendChild(node1);
         var element1 = document.getElementById("div3");
         element1.appendChild(para1);
-        for (i = 0; i < periods.length; i++) {
+        for (i = 0; i < classes.length; i++) {
             var spaceNode = document.createTextNode(" ");
             var space = document.createElement("p");
-            var period = (parseInt(periods.charAt(i)) <= 7) ? parseInt(periods.charAt(i)) : "EC";
-            var checkbox = document.createElement("input");
-            var Break = document.createElement("br");
-            checkbox.type = "checkbox";
-            var node = document.createTextNode(period + ": " + classes[periods.charAt(i)-1]);
-            classes[period-1] = "null";
-            var element = document.getElementById("div3");
             space.appendChild(spaceNode);
+            var Break = document.createElement("br");
+            var checkbox = document.createElement("input");
+            checkbox.type = "checkbox";
+            var node = document.createTextNode(classes[i]);
+            var element = document.getElementById("div3");
             element.appendChild(node);
             element.appendChild(checkbox);
             element.appendChild(Break);
             element.appendChild(space);
             element.appendChild(Break);
-        }
-
-        var node2 = document.createTextNode("Classes you don't have:");
-        var para2 = document.createElement("h3");
-        para2.appendChild(node2);
-        var element2 = document.getElementById("div3");
-        element2.appendChild(para2);
-
-        for (i = 0; i < classes.length; i++) {
-            if (classes[i] != "null") {
-                var para = document.createElement("p");
-                var period = (i <= 6) ? i+1 : "EC";
-                var node = document.createTextNode(period + ": " + classes[i]);
-                para.appendChild(node);
-                var element = document.getElementById("div3");
-                element.appendChild(para);
-            }
+            usedPeriods.push(parseInt(classes[i].charAt(classes[i].length-1)));
         }
     }
     catch (error) {
@@ -147,77 +107,7 @@ function getScheduleTommorow(periods) {
         let node = document.createTextNode("You do not have any classes today! :)");
         let para = document.createElement("p");
         para.appendChild(node);
-        let element = document.getElementById("div3");
+        let element = document.getElementById("div2");
         element.appendChild(para);
     }
 } 
-
-
-function calculate() {
-    remove();
-    let classes = ["English 2 Honors", "Chemistry Honors", "Precalculus Honors", "World History", "Creed, Community, Call", "Photography 1", "Spanish 3"];
-    var periods = document.getElementById("input").value;
-    var answer;
-    periods = periods.toString();
-    var node1 = document.createTextNode("Classes you have:");
-    var para1 = document.createElement("h3");
-    para1.setAttribute("id", 'para');
-    para1.appendChild(node1);
-    var element1 = document.getElementById("div1");
-    element1.appendChild(para1);
-
-    for (i = 0; i < periods.length; i++) {
-        var spaceNode = document.createTextNode(" ");
-        var space = document.createElement("p");
-        space.setAttribute("id", 'para');
-        var period = (parseInt(periods.charAt(i)) <= 7) ? parseInt(periods.charAt(i)) : "EC";
-        var checkbox = document.createElement("input");
-        checkbox.setAttribute("id", 'para');
-        var Break = document.createElement("br");
-        Break.setAttribute("id", 'para');
-        checkbox.type = "checkbox";
-        var span = document.createElement("span");
-        var node = document.createTextNode(period + ": " + classes[periods.charAt(i)-1]);
-        span.appendChild(node);
-        span.setAttribute("id", 'para');
-        classes[period-1] = "null";
-        var element = document.getElementById("div3");
-        space.appendChild(spaceNode);
-        element1.appendChild(span);
-        element1.appendChild(checkbox);
-        element1.appendChild(Break);
-        element1.appendChild(space);
-        element1.appendChild(Break);
-    }
-
-    var node2 = document.createTextNode("Classes you don't have:");
-    var para2 = document.createElement("h3");
-    para2.setAttribute("id", 'para');
-    para2.appendChild(node2);
-    var element2 = document.getElementById("div1");
-    element2.appendChild(para2);
-
-    for (i = 0; i < classes.length; i++) {
-        if (classes[i] != "null") {
-            var para = document.createElement("p");
-            para.setAttribute("id", 'para');
-            var node = document.createTextNode((i+1) + ". " + classes[i]);
-            para.appendChild(node);
-            var element = document.getElementById("div1");
-            element.appendChild(para);
-        }
-    }
-    
-}
-function remove() {
-    var moreElements = true;
-    while(moreElements) {
-        try {
-            var remove = document.getElementById("para");
-            remove.parentNode.removeChild(remove);
-        }
-        catch (error) {
-            moreElements = false;
-        }
-    }
-}
