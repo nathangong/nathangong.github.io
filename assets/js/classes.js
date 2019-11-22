@@ -12,12 +12,6 @@ function main(classes) {
 
     getSchedule(classes);
 
-    element = document.getElementById("div3");
-    titleNode = document.createTextNode("Tommorow's Classes:");
-    title = document.createElement("h1");
-    title.appendChild(titleNode);
-    element.appendChild(title);
-
     if (day == 5 || day == 6) {
         day = 1;
     }
@@ -80,10 +74,14 @@ function getSchedule(classes) {
 function getScheduleTommorow(classes) {
     var usedPeriods = [];
     try {
+        titleNode = document.createTextNode("Next School Day's Classes:");
+        title = document.createElement("h1");
+        title.appendChild(titleNode);
         var node1 = document.createTextNode("Classes you have:");
         var para1 = document.createElement("h3");
         para1.appendChild(node1);
         var element1 = document.getElementById("div3");
+        element1.appendChild(title);
         element1.appendChild(para1);
         for (i = 0; i < classes.length; i++) {
             var spaceNode = document.createTextNode(" ");
