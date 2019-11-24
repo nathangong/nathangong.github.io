@@ -2,4 +2,4 @@
 This is a site that lets me keep track of the classes I have and the homework I have done for each class everyday.
 ## Future Goals
 * Make this website into a bio
-* Make classes part be able to accurately predict my classes
+* Add a database to store status of homework
