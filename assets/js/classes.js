@@ -2,8 +2,6 @@ function main(classes) {
     var d = new Date();
     var day = d.getDay(d.toString());
     let element = document.getElementById("div2");
-    let para;
-    let node;
 
     let titleNode = document.createTextNode("Today's Classes:");
     let title = document.createElement("h1");
@@ -69,7 +67,6 @@ function getSchedule(classes) {
         cookie = document.cookie;
         if (cookie.includes(id)) {
             index = cookie.lastIndexOf(id);
-            var checked = cookie.substring(index + id.length + 1, index + id.length + 2);
         }
     }
     if (classes.length == 0) {
@@ -126,7 +123,7 @@ function getScheduleTommorow(classes, date) {
     }
 } 
 
-function writeCookie(elementID, expirationDate) {
+function writeCookie(elementID) {
     checkbox = document.getElementById(elementID);
     var checked = checkbox.checked;
     document.cookie = elementID + "=" + checked + "; expires =";
