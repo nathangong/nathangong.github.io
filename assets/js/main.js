@@ -1,8 +1,10 @@
 var opaque = false;
+var arrowDown = false;
 
 function dropdown() {
     document.getElementById("dropdown").classList.toggle("show");
     var projects = document.getElementById("projects");
+    var arrow = document.getElementById("arrow");
     if (opaque) {
         projects.setAttribute("style", "none");
         opaque = false;
@@ -10,6 +12,14 @@ function dropdown() {
     else {
         projects.setAttribute("style", "opacity: 1");
         opaque = true;
+    }
+    if (arrowDown) {
+        arrow.setAttribute("class", "arrow right");
+        arrowDown = false;
+    }
+    else {
+        arrow.setAttribute("class", "arrow down");
+        arrowDown = true;
     }
 }
 

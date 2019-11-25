@@ -9,7 +9,7 @@ body {
     height: 100%;
     opacity: 0.5;
     margin-left: 30px;
-    width: 15%;
+    width: 10%;
     float: left;
     transition-duration: 0.3s;
 }
@@ -17,6 +17,27 @@ body {
 .projects:hover {
     opacity: 1;
     cursor: pointer;
+    font-size: 32px;
+}
+
+i {
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+    margin-bottom: 3px;
+}
+
+.right {
+    transition-duration: 0.3s;
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+}
+
+.down {
+    transition-duration: 0.3s;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
 }
 
 .dropdown-content {
@@ -41,14 +62,14 @@ body {
 }
 
 .dropdown-content a:hover {
-    background-color: rgb(153, 152, 152);
+    background-color: rgb(187, 187, 187);
 }
 
 .show {display:block;}
 
 .header {
     box-sizing: border-box;
-    background-color:#0070FF;
+    background-color:rgb(53, 138, 248);
     color:white;
     float: left;
     margin-left: auto;
@@ -61,9 +82,9 @@ body {
 
 .title {
     font-family: "Proxima Nova", sans-serif;
-    width: 85%;
+    width: 90%;
     font-size: 50px;
-    font-weight: 600;
+    font-weight: 500;
     height: 100%;
     text-align: center;
 }
