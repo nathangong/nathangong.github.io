@@ -17,7 +17,7 @@ body {
 .projects:hover {
     opacity: 1;
     cursor: pointer;
-    font-size: 32px;
+    font-size: 31px;
 }
 
 i {
