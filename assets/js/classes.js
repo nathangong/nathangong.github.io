@@ -52,6 +52,12 @@ function getSchedule(classes) {
         var Break = document.createElement("br");
         var checkbox = document.createElement("input");
         checkbox.type = "checkbox";
+        var id = "checkbox" + i;
+        checkbox.setAttribute("id", id);
+        var tommorow = new Date();
+        tommorow.setDate(tommorow.getDate() + 1);
+        tommorow.setHours(0, 0, 0, 0);
+        checkbox.setAttribute("onclick", "writeCookie(" + "\"checkbox" + i + "\", " + tommorow.toUTCString + ")");
         var node = document.createTextNode(classes[i]);
         var element = document.getElementById("div2");
         element.appendChild(node);
@@ -59,6 +65,12 @@ function getSchedule(classes) {
         element.appendChild(Break);
         element.appendChild(space);
         element.appendChild(Break);
+
+        cookie = document.cookie;
+        if (cookie.includes(id)) {
+            index = cookie.lastIndexOf(id);
+            var checked = cookie.substring(index + id.length + 1, index + id.length + 2);
+        }
     }
     if (classes.length == 0) {
         let node = document.createTextNode("You do not have any classes today! :)");
@@ -68,8 +80,7 @@ function getSchedule(classes) {
         element.appendChild(para);
     }
 } 
-function getScheduleTommorow(classes) {
-    var usedPeriods = [];
+function getScheduleTommorow(classes, date) {
     titleNode = document.createTextNode("Next School Day's Classes:");
     title = document.createElement("h1");
     title.appendChild(titleNode);
@@ -86,6 +97,9 @@ function getScheduleTommorow(classes) {
         var Break = document.createElement("br");
         var checkbox = document.createElement("input");
         checkbox.type = "checkbox";
+        id = "tommorowCheckbox" + i;
+        checkbox.setAttribute("id", id);
+        checkbox.setAttribute("onclick", "writeCookie(" + "\"tommorowCheckbox" + i + "\", " + "\"" + date.toUTCString() + "\")");
         var node = document.createTextNode(classes[i]);
         var element = document.getElementById("div3");
         element.appendChild(node);
@@ -93,13 +107,27 @@ function getScheduleTommorow(classes) {
         element.appendChild(Break);
         element.appendChild(space);
         element.appendChild(Break);
-        usedPeriods.push(parseInt(classes[i].charAt(classes[i].length-1)));
+
+        cookie = document.cookie;
+        if (cookie.includes(id)) {
+            index = cookie.lastIndexOf(id);
+            var checked = cookie.substring(index + id.length + 1, index + id.length + 2);
+            if (checked == "t") {
+                checkbox.checked = true;
+            }
+        }
     }
     if (classes.length == 0) {
-        let node = document.createTextNode("ITS THE END OF THE SCHOOL YEAR!!!!!");
+        let node = document.createTextNode("IT'S THE END OF THE SCHOOL YEAR!!!!!");
         let para = document.createElement("p");
         para.appendChild(node);
         let element = document.getElementById("div2");
         element.appendChild(para);
     }
 } 
+
+function writeCookie(elementID, expirationDate) {
+    checkbox = document.getElementById(elementID);
+    var checked = checkbox.checked;
+    document.cookie = elementID + "=" + checked + "; expires =";
+}

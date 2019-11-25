@@ -97,5 +97,9 @@ function getClassesTommorow(json) {
             classes.push(name);
         }
     }
-    getScheduleTommorow(classes);
+    var start = json.value[0].start.dateTime;
+    var date = new Date(start);
+    date.setDate(date.getDate() + 1);
+    date.setHours(0, 0, 0, 0);
+    getScheduleTommorow(classes, date);
 }
