@@ -38,5 +38,10 @@ window.onclick = function(event) {
             projects.setAttribute("style", "none");
             opaque = false;
         }
+        if (arrowDown) {
+            var arrow = document.getElementById("arrow");
+            arrow.setAttribute("class", "arrow right");
+            arrowDown = false;
+        }
     }
 }
