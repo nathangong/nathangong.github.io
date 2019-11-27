@@ -30,14 +30,14 @@ i {
 
 .right {
     transition-duration: 0.3s;
-    transition-timing-function: cubic-bezier(0.2, -1.2, 0.8, 2);
+    transition-timing-function: cubic-bezier(0,.05,.4,1.84);
     transform: rotate(-45deg);
     -webkit-transform: rotate(-45deg);
 }
 
 .down {
     transition-duration: 0.3s;
-    transition-timing-function: cubic-bezier(0.2, -1.2, 0.8, 2);
+    transition-timing-function: cubic-bezier(0,.05,.4,1.84);
     transform: rotate(45deg);
     -webkit-transform: rotate(45deg);
 }
