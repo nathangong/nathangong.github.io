@@ -69,6 +69,27 @@ i {
 
 .show {display:block;}
 
+.links {
+    width: 10%;
+    height: 100%;
+    float: right;
+    text-decoration:none;
+}
+
+.logo {
+    color: white;
+    opacity: 0.5;
+    transition-duration: 0.3s;
+    margin-right: 10px;
+    border: 0px;
+    font-size: 40px;
+    margin-top: 25px;
+}
+
+.logo:hover {
+    opacity: 1;
+}
+
 .header {
     box-sizing: border-box;
     background-color:rgb(53, 138, 248);
