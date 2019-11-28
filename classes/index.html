@@ -3,12 +3,18 @@
     <head>
         <title>Nathan Gong | Classes</title>
         <link rel="shortcut icon" type="image/x-icon" href="../assets/img/coding.png">
-        <link rel="stylesheet" type="text/css" href = "../assets/css/classes.css">
+        <link rel="stylesheet" type="text/css" href = "../assets/css/main.css">
         <link href="https://fonts.googleapis.com/css?family=Rubik&display=swap" rel="stylesheet">
     </head>
     <body>
-        <div class = "title">
-            <h1>Classes</h1>
+        <div class = "header">
+            <div class = "projects" id = "projects" onclick="dropdown()">Projects <i class="arrow right" id="arrow"></i></div>
+            <div class = "title">Classes</div>
+        </div>
+        <div id = "dropdown" class = "dropdown-content">
+                <a href="#" style="border-radius:5px 5px 0px 0px">Classes</a>
+                <a href="http://cs.bcp.org/cozort/ecs/cozfall18/gong_nathan_myweb/arcade/" target="_blank">Arcade</a>
+                <a href="https://github.com/nathangong/nathangong.github.io" style="border-radius:0px 0px 5px 5px" target="_blank">This Website</a>
         </div>
         <div class = "toolbar">
             <div class = "button" onclick = "window.open('https://bcp.instructure.com','_newtab');">Canvas</div>
@@ -26,6 +32,7 @@
         </div>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="https://secure.aadcdn.microsoftonline-p.com/lib/1.0.0/js/msal.min.js"></script>
+        <script src = "../assets//js/main.js"></script>
         <script src = "../assets/js/xhttp.js"></script>
         <script src = "../assets/js/classes.js"></script>
     </body>
