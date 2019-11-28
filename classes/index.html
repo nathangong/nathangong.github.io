@@ -9,6 +9,14 @@
     <body>
         <div class = "header">
             <div class = "projects" id = "projects" onclick="dropdown()">Projects <i class="arrow right" id="arrow"></i></div>
+            <div class="links">
+                <a href="../" style="text-decoration:none">
+                    <i class="fas fa-home logo"></i>
+                </a>
+                <a href="https://github.com/nathangong" target="_blank" style="text-decoration:none">
+                    <i class="fab fa-github logo"></i>
+                </a>
+            </div>
             <div class = "title">Classes</div>
         </div>
         <div id = "dropdown" class = "dropdown-content">
@@ -27,10 +35,11 @@
             <div class = "button" onclick = "window.open('https://bcp.instructure.com/courses/5783','_newtab');">Spanish</div>
         </div>
         <div class = "container">
-            <div id = "div2" style = "float: left;width: 33%"></div>
-            <div id = "div3" style = "float: left; width: 33%"></div>
+            <div id = "today" style = "float: left;width: 33%"></div>
+            <div id = "tomorrow" style = "float: left; width: 33%"></div>
+            <div id = "homework" style = "float: left; width: 33%"></div>
         </div>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://kit.fontawesome.com/bb456e3f97.js" crossorigin="anonymous"></script>
         <script src="https://secure.aadcdn.microsoftonline-p.com/lib/1.0.0/js/msal.min.js"></script>
         <script src = "../assets//js/main.js"></script>
         <script src = "../assets/js/xhttp.js"></script>
