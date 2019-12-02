@@ -44,7 +44,7 @@ function getSchedule(classes) {
         space.appendChild(spaceNode);
         var Break = document.createElement("br");
         var node = document.createTextNode("Period " + classes[i].charAt(classes[i].length-1) + " - " + classes[i].substring(0, classes[i].length-5));
-        node = "Period " + node.charAt(node.length()-1) + " - " + node.substring(0, node.length-5);
+        node = "Period " + node.charAt(node.length-1) + " - " + node.substring(0, node.length-5);
         var element = document.getElementById("today");
         element.appendChild(node);
         element.appendChild(Break);
