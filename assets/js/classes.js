@@ -128,8 +128,8 @@ function homework(classes, date) {
     }
 }
 
-function writeCookie(elementID) {
+function writeCookie(elementID, expirationDate) {
     checkbox = document.getElementById(elementID);
     var checked = checkbox.checked;
-    document.cookie = elementID + "=" + checked + "; expires =";
+    document.cookie = elementID + "=" + checked + "; expires =" + expirationDate;
 }
