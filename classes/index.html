@@ -6,6 +6,7 @@
         <link rel="stylesheet" type="text/css" href = "../assets/css/main.css">
         <link href="https://fonts.googleapis.com/css?family=Rubik&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://use.typekit.net/njh1isx.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
         <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
     </head>
     <body>
@@ -36,11 +37,11 @@
             <div class = "button" onclick = "window.open('https://bcp.instructure.com/courses/5843','_newtab');">Photo</div>
             <div class = "button" onclick = "window.open('https://bcp.instructure.com/courses/5783','_newtab');">Spanish</div>
         </div>
-        <div class = "container">
-            <div id = "today" style = "float: left;width: 33%"></div>
-            <div id = "tomorrow" style = "float: left; width: 33%"></div>
-            <div id = "homework" style = "float: left; width: 33%"></div>
-        </div>
+        <div class = "content">
+            <div id = "today" class = "classes"></div>
+            <div id = "tomorrow" class = "classes"></div>
+            <div id = "homework" class = "classes"></div>
+        </div>        
         <script src="https://kit.fontawesome.com/bb456e3f97.js" crossorigin="anonymous"></script>
         <script src="https://secure.aadcdn.microsoftonline-p.com/lib/1.0.0/js/msal.min.js"></script>
         <script src = "../assets//js/main.js"></script>

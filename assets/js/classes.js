@@ -100,15 +100,23 @@ function homework(classes, date) {
         var checkbox = document.createElement("input");
         checkbox.type = "checkbox";
         id = "tommorowCheckbox" + i;
-        checkbox.setAttribute("id", id);
+        checkbox.setAttribute("class", id);
+        checkbox.setAttribute("style", "display:none!important");
+        checkbox.setAttribute("id", "cbx");
         checkbox.setAttribute("onclick", "writeCookie(" + "\"tommorowCheckbox" + i + "\", " + "\"" + date.toUTCString() + "\")");
+        var container = document.createElement("label");
+        container.setAttribute("class", "container");
+        container.appendChild(checkbox);
+        var checkmark = document.createElement("span");
+        checkmark.setAttribute("class", "checkmark");
+        container.appendChild(checkmark);
         var node = document.createTextNode("Period " + classes[i].charAt(classes[i].length-1) + " - " + classes[i].substring(0, classes[i].length-5));
-        var element = document.getElementById("homework");
-        element.appendChild(node);
-        element.appendChild(checkbox);
-        element.appendChild(Break);
-        element.appendChild(space);
-        element.appendChild(Break);
+        var div = document.getElementById("homework");
+        div.appendChild(node);
+        div.appendChild(container);
+        div.appendChild(Break);
+        div.appendChild(space);
+        div.appendChild(Break);
 
         cookie = document.cookie;
         if (cookie.includes(id)) {
@@ -129,7 +137,7 @@ function homework(classes, date) {
 }
 
 function writeCookie(elementID, expirationDate) {
-    checkbox = document.getElementById(elementID);
+    checkbox = document.getElementsByClassName(elementID)[0];
     var checked = checkbox.checked;
     document.cookie = elementID + "=" + checked + "; expires =" + expirationDate;
 }
