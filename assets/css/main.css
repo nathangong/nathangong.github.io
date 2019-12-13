@@ -151,14 +151,14 @@ i {
 }
 
 .courses {
-    width: 70%;
+    width: 75%;
     height: 100%;
     float: left;
 }
 
 .times {
     margin-top: 60px;
-    width: 30%;
+    width: 20%;
     height: 100%;
     float: left;
 }

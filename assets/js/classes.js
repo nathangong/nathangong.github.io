@@ -46,7 +46,7 @@ function getSchedule(classes, starts, ends) {
         var span = document.createElement("span");
         var node = document.createTextNode("Period " + classes[i].charAt(classes[i].length - 1) + " - " + classes[i].substring(0, classes[i].length - 5));
         span.appendChild(node);
-        if (currTime.getTime() > starts[i].getTime() && currTime.getTime() < ends[i].getTime()) {
+        if ((i == classes.length - 1 && currTime.getTime() > starts[i].getTime() && currTime.getTime() < starts[i + 1].getTime()) || (currTime.getTime() > starts[i].getTime() && currTime.getTime() < starts[i + 1].getTime())) {
             span.setAttribute("style", "font-weight: bold");
         }
         var courses = document.getElementById("todayClasses");
@@ -65,7 +65,7 @@ function getSchedule(classes, starts, ends) {
         node = document.createTextNode(startHour + ":" + startMinute + "-" + endHour + ":" + endMinute);
         span = document.createElement("span");
         span.appendChild(node);
-        if (currTime.getTime() > starts[i].getTime() && currTime.getTime() < ends[i].getTime()) {
+        if (i == classes.length - 1 && currTime.getTime() > starts[i].getTime() && currTime.getTime() < starts[i + 1].getTime() || currTime.getTime() > starts[i].getTime() && currTime.getTime() < starts[i + 1].getTime()) {
             span.setAttribute("style", "font-weight: bold");
         }
         spaceNode = document.createTextNode(" ");
