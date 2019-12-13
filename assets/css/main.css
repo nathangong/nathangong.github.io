@@ -150,6 +150,19 @@ i {
     background-color: rgb(206, 206, 206);
 }
 
+.courses {
+    width: 70%;
+    height: 100%;
+    float: left;
+}
+
+.times {
+    margin-top: 60px;
+    width: 30%;
+    height: 100%;
+    float: left;
+}
+
 .classes {
     float: left;
     width: 33%;

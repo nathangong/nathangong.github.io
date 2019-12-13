@@ -1,26 +1,25 @@
-function main(classes) {
+function main(classes, starts, ends) {
     var d = new Date();
     var day = d.getDay(d.toString());
-    let element = document.getElementById("today");
+    let element = document.getElementById("todayClasses");
 
     let titleNode = document.createTextNode("Today's Classes:");
     let title = document.createElement("h1");
     title.appendChild(titleNode);
     element.appendChild(title);
 
-    getSchedule(classes);
+    getSchedule(classes, starts, ends);
 
     if (day == 5 || day == 6) {
         day = 1;
-    }
-    else {
+    } else {
         day++;
     }
 
 }
 
 function getPeriods(day) {
-    switch(day) {
+    switch (day) {
         case 1:
             return "123456";
         case 2:
@@ -37,44 +36,94 @@ function getPeriods(day) {
     }
 }
 
-function getSchedule(classes) {
+function getSchedule(classes, starts, ends) {
+    var currTime = new Date(Date.now());
     for (i = 0; i < classes.length; i++) {
         var spaceNode = document.createTextNode(" ");
         var space = document.createElement("p");
         space.appendChild(spaceNode);
         var Break = document.createElement("br");
-        var node = document.createTextNode("Period " + classes[i].charAt(classes[i].length-1) + " - " + classes[i].substring(0, classes[i].length-5));
-        var element = document.getElementById("today");
-        element.appendChild(node);
-        element.appendChild(Break);
-        element.appendChild(space);
-        element.appendChild(Break);
+        var span = document.createElement("span");
+        var node = document.createTextNode("Period " + classes[i].charAt(classes[i].length - 1) + " - " + classes[i].substring(0, classes[i].length - 5));
+        span.appendChild(node);
+        if (currTime.getTime() > starts[i].getTime() && currTime.getTime() < ends[i].getTime()) {
+            span.setAttribute("style", "font-weight: bold");
+        }
+        var courses = document.getElementById("todayClasses");
+        courses.appendChild(span);
+        courses.appendChild(Break);
+        courses.appendChild(space);
+        courses.appendChild(Break);
+        var startHour = starts[i].getHours() % 12;
+        if (startHour == 0) startHour = 12;
+        var startMinute = starts[i].getMinutes();
+        if (startMinute < 10) startMinute = "0" + startMinute;
+        var endHour = ends[i].getHours() % 12;
+        if (endHour == 0) endHour = 12;
+        var endMinute = ends[i].getMinutes();
+        if (endMinute < 10) endMinute = "0" + endMinute;
+        node = document.createTextNode(startHour + ":" + startMinute + "-" + endHour + ":" + endMinute);
+        span = document.createElement("span");
+        span.appendChild(node);
+        if (currTime.getTime() > starts[i].getTime() && currTime.getTime() < ends[i].getTime()) {
+            span.setAttribute("style", "font-weight: bold");
+        }
+        spaceNode = document.createTextNode(" ");
+        space = document.createElement("p");
+        space.appendChild(spaceNode);
+        Break = document.createElement("br");
+        var times = document.getElementById("todayTimes");
+        times.appendChild(span);
+        times.appendChild(Break);
+        times.appendChild(space);
+        times.appendChild(Break);
     }
     if (classes.length == 0) {
         let node = document.createTextNode("You do not have any classes today! :)");
         let para = document.createElement("p");
         para.appendChild(node);
-        let element = document.getElementById("today");
+        let element = document.getElementById("todayClasses");
         element.appendChild(para);
     }
-} 
-function getScheduleTommorow(classes, date) {
+}
+
+function getScheduleTommorow(classes, date, starts, ends) {
     titleNode = document.createTextNode("Next Day's Classes:");
     title = document.createElement("h1");
     title.appendChild(titleNode);
-    var element1 = document.getElementById("tomorrow");
+    var element1 = document.getElementById("tomorrowClasses");
     element1.appendChild(title);
     for (i = 0; i < classes.length; i++) {
         var spaceNode = document.createTextNode(" ");
         var space = document.createElement("p");
         space.appendChild(spaceNode);
         var Break = document.createElement("br");
-        var node = document.createTextNode("Period " + classes[i].charAt(classes[i].length-1) + " - " + classes[i].substring(0, classes[i].length-5));
-        var element = document.getElementById("tomorrow");
+        var node = document.createTextNode("Period " + classes[i].charAt(classes[i].length - 1) + " - " + classes[i].substring(0, classes[i].length - 5));
+        var element = document.getElementById("tomorrowClasses");
         element.appendChild(node);
         element.appendChild(Break);
         element.appendChild(space);
         element.appendChild(Break);
+        var startHour = starts[i].getHours() % 12;
+        if (startHour == 0) startHour = 12;
+        var startMinute = starts[i].getMinutes();
+        if (startMinute < 10) startMinute = "0" + startMinute;
+        var endHour = ends[i].getHours() % 12;
+        if (endHour == 0) endHour = 12;
+        var endMinute = ends[i].getMinutes();
+        if (endMinute < 10) endMinute = "0" + endMinute;
+        node = document.createTextNode(startHour + ":" + startMinute + "-" + endHour + ":" + endMinute);
+        span = document.createElement("span");
+        span.appendChild(node);
+        spaceNode = document.createTextNode(" ");
+        space = document.createElement("p");
+        space.appendChild(spaceNode);
+        Break = document.createElement("br");
+        var times = document.getElementById("tomorrowTimes");
+        times.appendChild(span);
+        times.appendChild(Break);
+        times.appendChild(space);
+        times.appendChild(Break);
     }
     if (classes.length == 0) {
         let node = document.createTextNode("IT'S THE END OF THE SCHOOL YEAR!!!!!");
@@ -110,7 +159,7 @@ function homework(classes, date) {
         var checkmark = document.createElement("span");
         checkmark.setAttribute("class", "checkmark");
         container.appendChild(checkmark);
-        var node = document.createTextNode("Period " + classes[i].charAt(classes[i].length-1) + " - " + classes[i].substring(0, classes[i].length-5));
+        var node = document.createTextNode("Period " + classes[i].charAt(classes[i].length - 1) + " - " + classes[i].substring(0, classes[i].length - 5));
         var div = document.getElementById("homework");
         div.appendChild(node);
         div.appendChild(container);
