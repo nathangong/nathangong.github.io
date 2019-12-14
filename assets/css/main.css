@@ -1,10 +1,10 @@
 body {
-    font-family: "Proxima Nova", "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Proxima Nova", "Ubuntu", "Helvetica Neue", Helvetica, Arial, sans-serif;
     margin: 0px;
 }
 
 .projects {
-    font-family: "Proxima Nova", "Montserrat", sans-serif;
+    font-family: "Proxima Nova", "Ubuntu", sans-serif;
     box-sizing: border-box;
     height: 100%;
     opacity: 0.5;
@@ -43,7 +43,7 @@ i {
 }
 
 .dropdown-content {
-    font-family: "Proxima Nova", "Montserrat", sans-serif;
+    font-family: "Proxima Nova", "Ubuntu", sans-serif;
     margin-top: 75px;
     margin-left: 30px;
     display: none;
@@ -106,7 +106,7 @@ i {
 }
 
 .title {
-    font-family: "Proxima Nova", "Montserrat", sans-serif;
+    font-family: "Proxima Nova", "Ubuntu", sans-serif;
     width: 90%;
     font-size: 50px;
     font-weight: 500;
@@ -121,7 +121,7 @@ i {
 }
 
 .toolbar .button {
-    font-family: "Proxima Nova", "Montserrat", "Helevetica Neue", Arial, Helvetica, sans-serif;
+    font-family: "Proxima Nova", "Ubuntu", "Helevetica Neue", Arial, Helvetica, sans-serif;
     box-sizing: border-box;
     text-decoration: none;
     width: 12.5%;
@@ -151,7 +151,7 @@ i {
 }
 
 .courses {
-    width: 75%;
+    width: 70%;
     height: 100%;
     float: left;
 }
@@ -161,6 +161,7 @@ i {
     width: 20%;
     height: 100%;
     float: left;
+    text-align: center;
 }
 
 .classes {
