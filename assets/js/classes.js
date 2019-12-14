@@ -190,3 +190,15 @@ function writeCookie(elementID, expirationDate) {
     var checked = checkbox.checked;
     document.cookie = elementID + "=" + checked + "; expires =" + expirationDate;
 }
+
+(function worker() {
+  $.ajax({
+    url: '#', 
+    success: function(data) {
+      $('.result').html(data);
+    },
+    complete: function() {
+      setTimeout(worker, 5000);
+    }
+  });
+})();
