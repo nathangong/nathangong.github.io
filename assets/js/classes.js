@@ -46,7 +46,6 @@ function getSchedule(classes, starts, ends) {
         var span = document.createElement("span");
         var node = document.createTextNode("Period " + classes[i].charAt(classes[i].length - 1) + " - " + classes[i].substring(0, classes[i].length - 5));
         span.appendChild(node);
-        console.log(ends[i]);
         if ((i == 0 && currTime.getTime() < ends[i].getTime()) || (i != 0 && currTime.getTime() > ends[i-1].getTime() && currTime.getTime() < ends[i].getTime())) {
             span.setAttribute("style", "font-weight: bold");
         }
