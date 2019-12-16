@@ -130,7 +130,7 @@ i {
     background-color: rgb(245, 244, 244);
     border-right: 1px;
     float: left;
-    padding: 10px 4.2% 5px;
+    padding-top: 7px;
     text-align: center;
     transition-duration: 0.3s;
 }
