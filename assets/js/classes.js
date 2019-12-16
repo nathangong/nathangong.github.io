@@ -191,14 +191,10 @@ function writeCookie(elementID, expirationDate) {
     document.cookie = elementID + "=" + checked + "; expires =" + expirationDate;
 }
 
-(function worker() {
-  $.ajax({
-    url: '#', 
-    success: function(data) {
-      $('.result').html(data);
-    },
-    complete: function() {
-      setTimeout(worker, 5000);
-    }
-  });
-})();
+$(document).ready(function() {
+    setInterval('refreshPage()', 500000);
+});
+
+function refreshPage() { 
+    location.reload(); 
+}
