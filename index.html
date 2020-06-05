@@ -2,32 +2,37 @@
 <html>
     <head>
         <title>Nathan Gong</title>
-        <link rel="shortcut icon" type="image/x-icon" href="../assets/img/coding.png">
+        <link rel="shortcut icon" type="image/x-icon" href="assets\img\coding.png">
         <link rel="stylesheet" type="text/css" href = "assets/css/main.css">
         <link rel="stylesheet" href="https://use.typekit.net/njh1isx.css">
         <link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">
     </head>
 
     <body>
-        <div class = "header">
-            <div class="projects" id="projects" onclick="dropdown()">Projects <i class="arrow right" id="arrow"></i></div>
-            <div class="links">
-                <a href="#" style="text-decoration:none">
+        <div class="nav-bar">
+            <div class="nav-title">Nathan Gong</div>
+            <div class="nav-left">
+                <div class="dropdown-button" id="dropdown-button" onclick="dropdown()">
+                    <img src="assets\img\dropdown-arrow.png" class="dropdown-arrow right" id="dropdown-arrow"></img>
+                    <span style="padding-left:5px">Projects</span>
+                </div>
+            </div>
+            <div class="nav-right">
+                <a href="#" style="text-decoration:none; margin-right: 10px">
                     <i class="fas fa-home logo"></i>
                 </a>
                 <a href="https://github.com/nathangong" target="_blank" style="text-decoration:none">
                     <i class="fab fa-github logo"></i>
                 </a>
             </div>
-            <div class="title">Nathan Gong</div>
         </div>
-        <div id = "dropdown" class = "dropdown-content">
-            <a href="classes" style="border-radius:5px 5px 0px 0px">Classes</a>
+
+        <div id="dropdown-content" class="dropdown-content">
+            <a href="https:myclasses.netlify.app" style="border-radius:5px 5px 0px 0px" target="_blank">My Classes</a>
             <a href="http://cs.bcp.org/cozort/ecs/cozfall18/gong_nathan_myweb/arcade/" target="_blank">Arcade</a>
             <a href="https://github.com/nathangong/nathangong.github.io" style="border-radius:0px 0px 5px 5px" target="_blank">This Website</a>
         </div>
         <script src="https://kit.fontawesome.com/bb456e3f97.js" crossorigin="anonymous"></script>
         <script src="assets/js/main.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/animejs@3.1.0/lib/anime.min.js"></script>
     </body>
 </html>

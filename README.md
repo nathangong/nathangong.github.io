@@ -1,8 +1,10 @@
 # nathangong.github.io
-This is a website where I keep all my projects. This home page is still under development and isn't complete yet.
+This is a website where I keep all my projects.
 
-## Classes
-This is a site where I can keep track of all my classes and homework for the next day. It uses cookies to store the homework completion status and also the Microsoft Calendar API to receive data about what classes I have for each day. (Only works with BCP emails)
+## Projects
 
-Here is an exmaple of what it would look like for people who do have a BCP email:
-<kbd><img src="images/classes-example.png" /></kbd>
+### My Classes
+This is a website I co-created using the Nuxt.js framework where people from my school can keep track of all my classes and homework for the next day. It uses firebase to store user information and the Microsoft Calendar API to receive data about what classes a student has for each day.
+
+### Arcade
+This is a site I made using basic HTML, CSS, and JavaScript for my freshman exploring computer science class. It is a collection 5 games ranging from atari breakout to two-player snake.
